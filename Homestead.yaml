@@ -1,0 +1,38 @@
+ip: 192.168.10.11
+memory: 2048
+cpus: 2
+provider: virtualbox
+authorize: ~/.ssh/id_rsa.pub
+keys:
+    - ~/.ssh/id_rsa
+folders:
+    -
+        map: ../swccgdb
+        to: /home/vagrant/swccgdb
+    -
+        map: ../swccgdb-json-data
+        to: /home/vagrant/swccgdb-json-data
+    -
+        map: ../gemp-swccg
+        to: /home/vagrant/gemp-swccg
+    -
+        map: ../gemp-swccg-webui
+        to: /home/vagrant/gemp-swccg-webui
+    -
+        map: ../holotable
+        to: /home/vagrant/holotable
+sites:
+    -
+        map: swccg-online
+        to: /home/vagrant/swccgdb/web
+        type: "swccg-online"
+        php: "7.2"
+features:
+    -
+        mariadb: false
+    -
+        ohmyzsh: false
+    -
+        webdriver: false
+name: swccg-online
+hostname: swccg-online
